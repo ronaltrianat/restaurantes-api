@@ -10,7 +10,7 @@ Se utilizo la version free del api de zomato 'https://developers.zomato.com/docu
 
 Para poder acceder a los servicios expuestos por el microservicio, primero se debe realizar la respectiva autenticacion y obtener un token de acceso. 
 
-* [Login](login.md) : `POST /auth/login`
+* [Login](docs/login.md) : `POST /auth/login`
 
 ## Endpoints that require Authentication
 
