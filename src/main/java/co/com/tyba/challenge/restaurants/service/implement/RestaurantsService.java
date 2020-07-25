@@ -1,5 +1,7 @@
 package co.com.tyba.challenge.restaurants.service.implement;
 
+import co.com.tyba.challenge.restaurants.configuration.properties.ApiMessagesProperties;
+import co.com.tyba.challenge.restaurants.constants.ApiConstants;
 import co.com.tyba.challenge.restaurants.dto.response.EstablishmentsResponse;
 import co.com.tyba.challenge.restaurants.dto.response.TransactionsResponse;
 import co.com.tyba.challenge.restaurants.model.Transaction;
@@ -10,6 +12,7 @@ import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.HttpClientErrorException;
 
 @Slf4j
 @Service
@@ -17,17 +20,37 @@ public class RestaurantsService implements IRestaurantsService {
 
   private final IZomatoService zomatoService;
   private final IDatabaseService databaseService;
+  private final ApiMessagesProperties messagesProperties;
 
-  public RestaurantsService(IZomatoService zomatoService, IDatabaseService databaseService) {
+  private static final String SEARCH_PARAMETERS_ARE_INVALID = "search-parameters-are-invalid";
+
+  public RestaurantsService(
+      IZomatoService zomatoService,
+      IDatabaseService databaseService,
+      ApiMessagesProperties messagesProperties) {
     this.zomatoService = zomatoService;
     this.databaseService = databaseService;
+    this.messagesProperties = messagesProperties;
   }
 
   @Override
   public EstablishmentsResponse searchRestaurants(
       MultiValueMap<String, String> params, String username) {
-    saveTransaccion(params, username);
-    return this.zomatoService.searchRestaurants(params);
+    EstablishmentsResponse response = new EstablishmentsResponse();
+    try {
+      saveTransaccion(params, username);
+      response = this.zomatoService.searchRestaurants(params);
+      response.setSuccess(true);
+    } catch (HttpClientErrorException hce) {
+      log.error("searchRestaurants:HttpClientErrorException", hce);
+      response.setMessage(
+          this.messagesProperties.getRestaurants().get(SEARCH_PARAMETERS_ARE_INVALID));
+    } catch (Exception e) {
+      log.error("searchRestaurants:Exception", e);
+      response.setMessage(
+          this.messagesProperties.getRestaurants().get(ApiConstants.DEFAULT_MESSAGE));
+    }
+    return response;
   }
 
   @Override

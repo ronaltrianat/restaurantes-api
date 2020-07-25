@@ -18,9 +18,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception {
     http.csrf()
         .disable()
-        .addFilterAfter(new JWTAuthorizationFilter(this.apiProperties), UsernamePasswordAuthenticationFilter.class)
+        .addFilterAfter(
+            new JWTAuthorizationFilter(this.apiProperties),
+            UsernamePasswordAuthenticationFilter.class)
         .authorizeRequests()
-        .antMatchers(HttpMethod.POST, "/auth/login")
+        .antMatchers(HttpMethod.POST, "/auth/login", "/user/register")
         .permitAll()
         .anyRequest()
         .authenticated();

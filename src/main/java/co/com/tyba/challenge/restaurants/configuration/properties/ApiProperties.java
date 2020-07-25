@@ -10,12 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Setter
 @Getter
 public class ApiProperties {
-  private String zomatoUriEstablishments;
-  private String apiKeyName;
-  private String apiKeyValue;
-  private String databaseFilesLocation;
-  private String databaseKeyCipher;
-  private String jwtSecretKey;
-  private String jwtId;
-  private long jwtExpirationMillis;
+  private ZomatoProperties zomato;
+  private DatabaseProperties database;
+  private JwtProperties jwt;
 }

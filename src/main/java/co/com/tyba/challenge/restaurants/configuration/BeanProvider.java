@@ -24,7 +24,8 @@ public class BeanProvider {
   @Bean
   public JsonDBTemplate jsonDBTemplate() throws GeneralSecurityException {
     final String baseScanPackage = "co.com.tyba.challenge.restaurants.model";
-    ICipher cipher = new Default1Cipher(apiProperties.getDatabaseKeyCipher());
-    return new JsonDBTemplate(apiProperties.getDatabaseFilesLocation(), baseScanPackage, cipher);
+    ICipher cipher = new Default1Cipher(apiProperties.getDatabase().getKeyCipher());
+    return new JsonDBTemplate(
+        apiProperties.getDatabase().getFilesLocation(), baseScanPackage, cipher);
   }
 }
