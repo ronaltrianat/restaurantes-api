@@ -4,11 +4,11 @@ Los usuarios deben estar registrados para poder acceder al servicio de login.
 
 **URL** : `/auth/login/`
 
-**Method** : `POST`
+**Metodo** : `POST`
 
-**Auth required** : NO
+**Requiere Autenticacion** : NO
 
-**Body Request**
+**Cuerpo de la solicitud**
 
 ```json
 {
@@ -16,11 +16,11 @@ Los usuarios deben estar registrados para poder acceder al servicio de login.
     "password": "[password in plain text]"
 }
 ```
-## Success Response
+## Respuesta exitosa
 
-**Code** : `200 OK`
+**Codigo de respuesta** : `200 OK`
 
-**Content example**
+**Respuesta ejemplo**
 
 ```json
 {
@@ -31,13 +31,13 @@ Los usuarios deben estar registrados para poder acceder al servicio de login.
 }
 ```
 
-## Error Response
+## Respuesta Fallida
 
-**Condition** : Si el usuario no existe, password invalido o algun otro error.
+**Condicion** : Si el usuario no existe, password invalido o algun otro error.
 
-**Code** : `200 OK`
+**Codigo de respuesta** : `200 OK`
 
-**Content** :
+**Contenido** :
 
 ```json
 {

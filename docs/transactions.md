@@ -4,17 +4,16 @@ Este servicio es el encargado de devolver una lista transacciones realizadas por
 
 **URL** : `/restaurants/transactions`
 
-**Method** : `GET`
+**Metodo** : `GET`
 
-**Auth required** : YES
+**Requiere Autenticacion** : SI
 
-## Success Response
+## Respuesta Exitosa
 
-**Code** : `200 OK`
+**Codigo de respuesta** : `200 OK`
 
-**Content example**
+**Respuesta de ejemplo**
 
-/restaurants/search?city_id=2809
 ```json
 {
   "success": true,
@@ -44,13 +43,13 @@ Este servicio es el encargado de devolver una lista transacciones realizadas por
 }
 ```
 
-## Error Response
+## Respuesta Fallida
 
-**Condition** : Si nos existen transacciones o algun otro error.
+**Condicion** : Si nos existen transacciones o algun otro error.
 
-**Code** : `200 OK`
+**Codigo respuesta** : `200 OK`
 
-**Content** :
+**Contenido** :
 
 ```json
 {

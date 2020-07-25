@@ -16,5 +16,6 @@ public class ApiMessagesProperties {
   private String defaultError;
   private Map<String, String> login;
   private Map<String, String> restaurants;
+  private Map<String, String> user;
 
 }

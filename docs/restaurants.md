@@ -4,20 +4,20 @@ Este servicio es el encargado de devolver una lista de restaurantes de acuerdo a
 
 **URL** : `/restaurants/search?city_id=xxxx&lat=111111&lon=222222`
 
-**Method** : `GET`
+**Metodo** : `GET`
 
-**Auth required** : YES
+**Requiere Autenticacion** : SI
 
 **Parameters Request**
 * citi_id : Identificador de la ciudad(Ejemplo:280, 2809).
 * lat : Latitud(Ejemplo: 40.6643)
 * lon : Longitud(Ejemplo: -73.9385)
 
-## Success Response
+## Respuesta Exitosa
 
-**Code** : `200 OK`
+**Codido de respuesta** : `200 OK`
 
-**Content example**
+**Respuesta ejemplo**
 
 /restaurants/search?city_id=2809
 ```json
@@ -59,13 +59,13 @@ Este servicio es el encargado de devolver una lista de restaurantes de acuerdo a
 }
 ```
 
-## Error Response
+## Respuesta Fallida
 
-**Condition** : Si nos existen restaurantes o algun otro error.
+**Condicion** : Si nos existen restaurantes o algun otro error.
 
-**Code** : `200 OK`
+**Codigo de respuesta** : `200 OK`
 
-**Content** :
+**Contenido** :
 
 ```json
 {

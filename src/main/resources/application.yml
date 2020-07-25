@@ -21,6 +21,10 @@ api:
     restaurants:
       'search-parameters-are-invalid': 'Search parameters are invalid.'
       default: 'Nuestros sistemas están fallando. Te invitamos a intentarlo más tarde.'
+    user:
+      'user-successfully-registered': 'User successfully registered.'
+      'user-already-exists': 'User already exists.'
+      default: 'Nuestros sistemas están fallando. Te invitamos a intentarlo más tarde.'
     defaultError: 'Nuestros sistemas están fallando. Te invitamos a intentarlo más tarde. (2)'
 
 

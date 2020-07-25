@@ -12,21 +12,10 @@ Para poder acceder a los servicios expuestos por el microservicio, primero se de
 
 * [Login](docs/login.md) : `POST /auth/login`
 
-### Consulta de Restaurantes y Transacciones
+### Servicios
 
-Each endpoint manipulates or displays information related to the User whose
 Token is provided with the request:
 
-* [Search Restaurants](docs/restaurants.md) : `GET /restaurants/search`
-* [Find Transactions](docs/transactions.md) : `GET /restaurants/transactions`
-
-### Account related
-
-Endpoints for viewing and manipulating the Accounts that the Authenticated User
-has permissions to access.
-
-* [Show Accessible Accounts](accounts/get.md) : `GET /api/accounts/`
-* [Create Account](accounts/post.md) : `POST /api/accounts/`
-* [Show An Account](accounts/pk/get.md) : `GET /api/accounts/:pk/`
-* [Update An Account](accounts/pk/put.md) : `PUT /api/accounts/:pk/`
-* [Delete An Account](accounts/pk/delete.md) : `DELETE /api/accounts/:pk/`
+* [Buscar Restaurantes](docs/restaurants.md) : `GET /restaurants/search`
+* [Consultar Transacciones](docs/transactions.md) : `GET /restaurants/transactions`
+* [Registrar Usuario](docs/register-user.md) : `POST /user/register`
