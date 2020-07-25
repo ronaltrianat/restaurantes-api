@@ -27,7 +27,7 @@ public class JWTUtil {
 
     String token =
         Jwts.builder()
-            .setId(this.apiProperties.getJwtId())
+            .setId(this.apiProperties.getJwt().getId())
             .setSubject(username)
             .claim(
                 "authorities",
@@ -36,8 +36,10 @@ public class JWTUtil {
                     .collect(Collectors.toList()))
             .setIssuedAt(new Date(System.currentTimeMillis()))
             .setExpiration(
-                new Date(System.currentTimeMillis() + this.apiProperties.getJwtExpirationMillis()))
-            .signWith(SignatureAlgorithm.HS512, this.apiProperties.getJwtSecretKey().getBytes())
+                new Date(
+                    System.currentTimeMillis() + this.apiProperties.getJwt().getExpirationMillis()))
+            .signWith(
+                SignatureAlgorithm.HS512, this.apiProperties.getJwt().getSecretKey().getBytes())
             .compact();
 
     return PREFIX + token;

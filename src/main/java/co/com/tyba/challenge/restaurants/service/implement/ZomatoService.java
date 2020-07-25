@@ -33,11 +33,12 @@ public class ZomatoService implements IZomatoService {
 
     HttpHeaders headers = new HttpHeaders();
     headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
-    headers.set(apiProperties.getApiKeyName(), apiProperties.getApiKeyValue());
+    headers.set(
+        apiProperties.getZomato().getApiKeyName(), apiProperties.getZomato().getApiKeyValue());
     HttpEntity request = new HttpEntity(headers);
 
     UriComponents builder =
-        UriComponentsBuilder.fromHttpUrl(apiProperties.getZomatoUriEstablishments())
+        UriComponentsBuilder.fromHttpUrl(apiProperties.getZomato().getUriEstablishments())
             .queryParams(queryParams)
             .build();
 
