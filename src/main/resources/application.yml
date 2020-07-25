@@ -1,0 +1,12 @@
+server:
+  port: 9080
+
+api:
+  zomato-uri-establishments: https://developers.zomato.com/api/v2.1/establishments
+  api-key-name: user-key
+  api-key-value: 1253ecfe4cce84f6723ef97c2780e4b3
+  database-files-location: database
+  database-key-cipher: 1r8+24pibarAWgS85/Heeg==
+  jwt-secret-key: tybaSecretKeyJWT
+  jwt-id: tybaChallengeJWT
+  jwt-expiration-millis: 600000
