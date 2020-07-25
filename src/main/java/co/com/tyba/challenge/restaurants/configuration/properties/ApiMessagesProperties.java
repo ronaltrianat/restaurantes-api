@@ -15,5 +15,6 @@ public class ApiMessagesProperties {
   protected static final String DEFAULT = "default";
 
   private Map<String, String> login;
+  private Map<String, String> restaurants;
 
 }

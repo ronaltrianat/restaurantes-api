@@ -18,6 +18,9 @@ api:
       'user-does-not-exist': 'User does not exist.'
       'invalid-credentials': 'Invalid credentials.'
       default: 'Nuestros sistemas están fallando. Te invitamos a intentarlo más tarde.'
+    restaurants:
+      'search-parameters-are-invalid': 'Search parameters are invalid.'
+      default: 'Nuestros sistemas están fallando. Te invitamos a intentarlo más tarde.'
 
 
 

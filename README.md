@@ -12,17 +12,13 @@ Para poder acceder a los servicios expuestos por el microservicio, primero se de
 
 * [Login](docs/login.md) : `POST /auth/login`
 
-## Endpoints that require Authentication
-
-Servicios que requieren autenticacion.
-
-### Current User related
+### Consulta de Restaurantes y Transacciones
 
 Each endpoint manipulates or displays information related to the User whose
 Token is provided with the request:
 
-* [Show info](user/get.md) : `GET /api/user/`
-* [Update info](user/put.md) : `PUT /api/user/`
+* [Search Restaurants](docs/restaurants.md) : `GET /restaurants/search`
+* [Find Transactions](docs/transactions.md) : `GET /restaurants/transactions`
 
 ### Account related
 

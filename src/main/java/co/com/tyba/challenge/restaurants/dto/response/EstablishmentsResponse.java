@@ -6,6 +6,6 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class EstablishmentsResponse {
+public class EstablishmentsResponse extends GenericResponse {
   private List<Establishment> establishments;
 }

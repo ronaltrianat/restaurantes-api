@@ -33,7 +33,7 @@ Los usuarios deben estar registrados para poder acceder al servicio de login.
 
 ## Error Response
 
-**Condition** : If 'username' and 'password' combination is wrong.
+**Condition** : Si el usuario no existe, password invalido o algun otro error.
 
 **Code** : `200 OK`
 
