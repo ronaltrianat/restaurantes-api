@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class ApiMessagesProperties {
 
   protected static final String DEFAULT = "default";
-
+  private String defaultError;
   private Map<String, String> login;
   private Map<String, String> restaurants;
 

@@ -1,4 +1,4 @@
-# Login
+# Consulta de Restaurantes
 
 Este servicio es el encargado de devolver una lista de restaurantes de acuerdo al id de una ciudad o las coordenadas de la misma.
 
