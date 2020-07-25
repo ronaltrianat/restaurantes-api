@@ -19,3 +19,8 @@ Token is provided with the request:
 * [Buscar Restaurantes](docs/restaurants.md) : `GET /restaurants/search`
 * [Consultar Transacciones](docs/transactions.md) : `GET /restaurants/transactions`
 * [Registrar Usuario](docs/register-user.md) : `POST /user/register`
+
+
+### Diagrama Pensado para Resolver Desafio
+ 
+![alt text](docs/diagrama-tyba.png "Logo Title Text 1")
