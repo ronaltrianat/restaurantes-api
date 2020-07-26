@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  restaurantes-api-container:
+    image: restaurantes-api:latest
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /data/restaurantes-api
+    ports:
+      - "9080:9080"
