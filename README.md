@@ -30,8 +30,41 @@ gradle clean build
 ```
 docker-compose up
 ```
-Al arrancar el proyecto se puede validar que arranco correctamente si sale el mensaje `Tomcat started on port(s): 9080 (http) with context path ''`
+Al arrancar el proyecto se puede validar que arranco correctamente si sale el mensaje 
+`Tomcat started on port(s): 9080 (http) with context path ''`
+
 ![alt text](docs/images/docker-compose-start.png "Logo Title Text 1")
+
+---
+* Validar funcionamiento de los servicios
+
+1. ##### Registrar Usuario
+```
+POST http://localhost:9080/user/register HTTP/1.1
+> Content-Type: application/json
+> Accept: */*
+
+| {
+| 	"username":"user",
+| 	"password":"123456"
+| }
+
+* Response
+
+< HTTP/1.1 200 
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+
+| {
+|   "success": true,
+|   "message": "User successfully registered."
+| }
+```
+2. Login
+
+
+3.
+---
 
 ### Diagrama Pensado para Resolver Desafio
  
