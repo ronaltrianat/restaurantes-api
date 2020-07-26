@@ -38,7 +38,7 @@ Al arrancar el proyecto se puede validar que arranco correctamente si sale el me
 ---
 * Validar funcionamiento de los servicios
 
-1. ##### Registrar Usuario
+##### Registrar Usuario
 ```
 POST http://localhost:9080/user/register HTTP/1.1
 > Content-Type: application/json
@@ -60,10 +60,108 @@ POST http://localhost:9080/user/register HTTP/1.1
 |   "message": "User successfully registered."
 | }
 ```
-2. Login
+##### Login
+```
+POST http://localhost:9080/auth/login HTTP/1.1
+> Content-Type: application/json
+> Accept: */*
 
+| {
+| 	"username":"user",
+| 	"password":"123456"
+| }
 
-3.
+* Response
+
+< HTTP/1.1 200 
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+
+| {
+|   "success": true,
+|   "message": null,
+|   "token": "Bearer *************************"
+| }
+```
+
+##### Consulta de Restaurantes
+```
+GET http://localhost:9080/restaurants/search?city_id=2809 HTTP/1.1
+> Authorization: Bearer *************************
+> Accept: */*
+
+* Response
+
+< HTTP/1.1 200 
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+
+| {
+|   "success": true,
+|   "message": null,
+|   "establishments": [
+|     {
+|       "establishment": {
+|         "id": 21,
+|         "name": "Quick Bites"
+|       }
+|     },
+|     {
+|       "establishment": {
+|         "id": 7,
+|         "name": "Bar"
+|       }
+|     },
+|     {
+|       "establishment": {
+|         "id": 16,
+|         "name": "Casual Dining"
+|       }
+|     },
+|     {
+|       "establishment": {
+|         "id": 41,
+|         "name": "Beverage Shop"
+|       }
+|     },
+|     {
+|       "establishment": {
+|         "id": 295,
+|         "name": "Noodle Shop"
+|       }
+|     }
+|   ]
+| }
+```
+##### Consulta de Transacciones
+```
+POST http://localhost:9080/restaurants/transactions HTTP/1.1
+> Authorization: Bearer *************************
+> Accept: */*
+
+| {
+| 	"username":"user",
+| 	"password":"123456"
+| }
+
+* Response
+
+< HTTP/1.1 200 
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+
+| {
+|   "success": true,
+|   "message": null,
+|   "transactions": [
+|     {
+|       "id": 1595779363377,
+|       "params": "{city_id=[2809]}",
+|       "username": "user"
+|     }
+|   ]
+| }
+```
 ---
 
 ### Diagrama Pensado para Resolver Desafio
