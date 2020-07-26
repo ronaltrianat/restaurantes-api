@@ -21,8 +21,12 @@ Token is provided with the request:
 * [Registrar Usuario](docs/register-user.md) : `POST /user/register`
 
 ### Construir Aplicacion
+* Descargar proyecto
+```
+git clone git@github.com:ronaltrianat/restaurantes-api.git
+```
 
-* Compilar proyecto java con gradle:
+* Compilar proyecto java con gradle(instalar gradle y java):
 ```
 gradle clean build
 ```
@@ -163,6 +167,38 @@ POST http://localhost:9080/restaurants/transactions HTTP/1.1
 | }
 ```
 ---
+### Propiedades de configuracion del proyecto
+```
+server:
+  port: 9080 -> Puerto en el cual inicia el microservicio.
+
+api:
+  zomato: -> Propiedades del servicio externo de restaurantes
+    uri-establishments: https://developers.zomato.com/api/v2.1/establishments -> Url que para la consulta de restaurantes por id de ciudad o coordenadas.
+    api-key-name: user-key -> Nombre del header donde se envia el api-key de acceso al api
+    api-key-value: 1253ecfe4cce84f6723ef97c2780e4b3 -> Contenido del api-key de acceso al api
+  database:
+    files-location: database -> Nombre del directorio donde se almacena la informacion en archivos json
+    key-cipher: 1r8+24pibarAWgS85/Heeg== -> Llave de cifrado de datos sensibles en la db local
+  jwt:
+    id: tybaChallengeJWT -> Id de generacion del token jwt
+    secret-key: tybaSecretKeyJWT -> Llave secreta para generacion de token jwt.
+    expiration-millis: 600000 -> Tiempo de expiracion del token en milisegundos.
+  messages: -> Configuracion de mensajes de respuesta para para operacion del microservicio.
+    login:
+      'user-does-not-exist': 'User does not exist.'
+      'invalid-credentials': 'Invalid credentials.'
+      default: 'Nuestros sistemas están fallando. Te invitamos a intentarlo más tarde.'
+    restaurants:
+      'search-parameters-are-invalid': 'Search parameters are invalid.'
+      default: 'Nuestros sistemas están fallando. Te invitamos a intentarlo más tarde.'
+    user:
+      'user-successfully-registered': 'User successfully registered.'
+      'user-already-exists': 'User already exists.'
+      default: 'Nuestros sistemas están fallando. Te invitamos a intentarlo más tarde.'
+    defaultError: 'Nuestros sistemas están fallando. Te invitamos a intentarlo más tarde. (2)'
+```
+
 
 ### Diagrama Pensado para Resolver Desafio
  
